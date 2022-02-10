@@ -1,8 +1,3 @@
-// fetch data
-// render ramen
-// variable to call to insert comment and insert rating .value
-// create new ramen
-
 function getRamen() {
   fetch("http://localhost:3000/ramens")
     .then((resp) => resp.json())
@@ -33,7 +28,7 @@ function renderRamen(soup) {
   });
 }
 
-function addNewRamen(soup) {
+function addNewRamen() {
   const button = document.querySelector("#new-ramen");
   button.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -42,7 +37,6 @@ function addNewRamen(soup) {
     let newImage = document.querySelector("#new-image");
     let newRating = document.querySelector("#new-rating");
     let newComment = document.querySelector("#new-comment");
-    const holder = document.querySelector("#ramen-menu");
 
     let newRamen = {
       name: newName.value,
